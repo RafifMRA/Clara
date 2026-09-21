@@ -1,0 +1,20 @@
+node_modules/
+dist/
+coverage/
+
+# Secrets. The operational submission key never enters version control
+# (Security and Threat Model, section 6).
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Local state
+*.log
+.DS_Store
+data/*.sqlite
+data/*.sqlite-journal
+
+# Word lock files
+~$*.docx

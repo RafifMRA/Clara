@@ -1,0 +1,32 @@
+{
+  "name": "clara",
+  "version": "0.1.0",
+  "description": "Discovery and settlement layer for agent payments on Stellar. An x402 facilitator plus a Stellar-native Bazaar.",
+  "license": "Apache-2.0",
+  "author": "Rafif Muhammad Ransi Anargya",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RafifMRA/Clara.git"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --test \"test/**/*.test.js\"",
+    "licence": "node scripts/licence-scan.js",
+    "verify": "npm run licence && npm run typecheck && npm test"
+  },
+  "dependencies": {
+    "@stellar/stellar-sdk": "^17.1.0",
+    "@x402/core": "^2.26.0",
+    "@x402/extensions": "^2.26.0",
+    "@x402/stellar": "^2.26.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.2",
+    "typescript": "^5.9.3"
+  }
+}
