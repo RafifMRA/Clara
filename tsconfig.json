@@ -7,6 +7,13 @@
     "outDir": "dist",
     "rootDir": "src",
 
+    // Sources import each other with explicit .ts extensions so that Node's
+    // strip-only TypeScript support can run them directly in development and
+    // test. These two options let tsc accept that and rewrite the extensions
+    // on emit, so the built output still imports .js.
+    "allowImportingTsExtensions": true,
+    "rewriteRelativeImportExtensions": true,
+
     "strict": true,
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": true,
