@@ -16,7 +16,7 @@ Pre-implementation. The planning document set is complete and lives in [`docs/`]
 
 | Milestone | Scope | State |
 |---|---|---|
-| M1 | Facilitator: `/verify`, `/settle`, `/supported` | In progress |
+| M1 | Facilitator: `/verify`, `/settle`, `/supported` | Built; not yet run against live testnet |
 | M2 | Bazaar: catalogue, `/discovery/resources`, `/discovery/search` | Not started |
 | M3 | MCP server: search and paid-call tools | Not started |
 | M4 | `scheme_upto_stellar.md` upstream contribution | Not started |
@@ -58,6 +58,18 @@ test/      node:test suites
 npm ci
 npm run verify   # licence gate + typecheck + tests
 ```
+
+To run the facilitator you need your own funded testnet key:
+
+```bash
+cp .env.example .env
+stellar keys generate --network testnet clara-facilitator
+stellar keys address clara-facilitator   # fund at lab.stellar.org/account/fund
+stellar keys show clara-facilitator      # put the S... value in .env
+node src/index.ts
+```
+
+The key stays on your machine. `.env` is gitignored.
 
 ### The licence gate
 
